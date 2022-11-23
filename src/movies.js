@@ -48,8 +48,43 @@ function howManyMovies(moviesArray) {
  
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage(moviesArray) {}
+/*function howManyMovies(moviesArray) {
+   let newArray = [];
+   const stevenDrama = moviesArray.map(function (movie) {
+      
+       if (movie.director === "Steven Spielberg") {
+          for (let i=0; i<movie.genre.length; i++) {
+             if (movie.genre[i] === "Drama") {
+                return movie;
+             }
+          }
+       }
+       
+    })
+    for (let i=0; i<stevenDrama.length; ++i) {
+      if (stevenDrama[i] !== undefined) {
+        newArray.push(stevenDrama[i]);
+      }
+    }
+    return newArray.length;
+ }*/
+ 
+ function scoresAverage(moviesArray) {
+   const averageArray = moviesArray.map(function (movie) {
+     return movie.score;
+   })
+   let sum = 0;
+   let average = 0;
+   for (let i = 0; i<averageArray.length; ++i) {
+     sum += averageArray[i];
+   }
+   if (sum !== 0) {
+     average = sum / averageArray.length;
+   }
+   return Number(average.toFixed(2));
+ };
 
+ 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 function dramaMoviesScore(moviesArray) {}
 
